@@ -1,12 +1,19 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="parseQ">
 <head>
 	<title>ParseQ</title>
     <link rel="stylesheet" href="main.css"/>
 </head>
 <body ng-controller="MainCtrl">
-{{test}}
+<div>
+<input placeholder="what is the question" ng-model="questionText">
+    <button ng-click="postData()">submit</button>
+</div>
+    <button ng-click="getData()">See all questions</button>
+   <div ng-repeat="question in questions">
 
+      <div><button ng-click="removeQuestion(question)">{{question.theQuestion}}</button></div>
+   </div>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/defaultHeaders.js"></script>
